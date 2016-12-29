@@ -3,6 +3,8 @@ Short perl script for drawing christmas tree in different size depending on the 
 
 I use this script as a greeting in my .zshrc in the christmas time.
 
+![Demo](demo.gif)
+
 # Usage
 
 ## Simple
