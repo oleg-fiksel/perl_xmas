@@ -27,4 +27,14 @@ sub parabola{
 
 $y = parabola(-1/60,25,$max,$x);
 
-printf "%15s%s\n",$_%=($y-1),$_=5**$_,$r=int rand 10,s/$r/+/g,s/\d/./g for 1..$y;
+# oneliner throws a warning on perl < 5.24.0 AND > 5.22
+# https://rt.perl.org/Public/Bug/Display.html?id=125469
+#printf("%15s%s\n",$_%=($y-1),$_=5**$_,$r=int rand 10,s/$r/+/g,s/\d/./g) for 1..$y;
+foreach(1..$y){
+	$_%=($y-1);
+	$_=5**$_;
+	$r=int rand 10;
+	s/$r/+/g;
+	s/\d/./g;
+	printf("%15s%s$/",$_,$_);
+}
